@@ -1,0 +1,97 @@
+//CREATE TABLE 
+create table Employee_details(Emp_id varchar2(10),Emp_name varchar2(20),Job_name varchar(20),Manager_id varchar(10),Hire_date date,salary number,Dep_id varchar(10));
+
+Table created.
+
+
+//INSERT DATA
+SQL> insert into Employee_details values('E001','Lalitha','Software Developer','M01','21-aug-22',20000,'D001');
+
+1 row created.
+
+SQL> insert into Employee_details values('E002','Prinyanka','Software Developer','M01','20-sep-21',22000,'D001');
+
+1 row created.
+
+SQL> insert into Employee_details values('E003','Ganga','Analyst','M02','20-mar-20',30000,'D002');
+
+1 row created.
+
+SQL> insert into Employee_details values('E004','Raj','Analyst','M02','20-Apr-20',30000,'D002');
+
+1 row created.
+
+SQL> insert into Employee_details values('E005','Jyothi','Cloud Engineer','M03','20-Apr-21',25000,'D003');
+
+1 row created.
+
+SQL> insert into Employee_details values('E006','Deepthi','Devops Engineer','M03','20-Apr-03',25000,'D003');
+
+1 row created.
+
+SQL> insert into Employee_details values('E007','Vamsi','salesforce Engineer','M04','20-jul-12',55000,'D004');
+
+1 row created.
+
+SQL> insert into Employee_details values('E008','Surya','IT Manger','M05','21-jul-13',50000,'D005');
+
+1 row created.
+
+SQL> insert into Employee_details values('E009','Vijaya','Andriod Developer','M01','19-jun-14',40000,'D001');
+
+1 row created.
+
+SQL> insert into Employee_details values('E009','Amali','Andriod Developer','M01','19-jun-18',30000,'D001');
+
+1 row created.
+
+SQL> insert into Employee_details values('E010','Geethika','Programme Analyst','M07','19-jun-19',35000,'D008');
+
+1 row created.
+
+
+
+//SALARIES OF ALL EMPLOYEE
+
+SQL> select salary from Employee_details;
+
+    SALARY
+----------
+     20000
+     22000
+     30000
+     30000
+     25000
+     25000
+     55000
+     50000
+     40000
+     30000
+     35000
+
+11 rows selected.
+
+
+//UNIQUE JOB NAMES
+
+SQL> select distinct Job_name from Employee_details;
+
+JOB_NAME
+--------------------
+Analyst
+salesforce Engineer
+Software Developer
+Programme Analyst
+Devops Engineer
+IT Manger
+Andriod Developer
+Cloud Engineer
+
+8 rows selected.
+
+
+//UPDATE VALUE
+
+SQL> update Employee_details set salary=40000 where Emp_name='Raj';
+
+1 row updated.

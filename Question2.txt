@@ -1,0 +1,91 @@
+ create table Football_venue(venue_id varchar2(20),venue_name varchar2(30),city_id varchar2(20),capacity number);
+
+Table created.
+
+//INSERT DATA
+
+SQL> insert into Football_venue values('F0001','France','10003',42115);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0002','Spain','10004',40005);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0002','Argentina','10005',50000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0004','India','10006',55000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0005','Zimbombay','10007',45000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0006','Australia','10008',34000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0007','Hungary','10009',33000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0008','Serbia','10010',43000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0009','Italy','10011',47000);
+
+1 row created.
+
+SQL> insert into Football_venue values('F0010','Iraq','10012',47020);
+
+1 row created.
+
+
+
+//COUNT OF VENUE NAMES
+
+ select count(distinct venue_name) from Football_venue;
+
+COUNT(DISTINCTVENUE_NAME)
+-------------------------
+                       10
+
+
+//VENUE NAME AND CAPACITY IN THE FORMAT OF LOCATION AND VOLUME
+
+SQL> alter table Football_venue rename column venue_name to Location;
+
+Table altered.
+
+SQL> alter table Football_venue rename column capacity to Volume;
+
+Table altered.
+
+SQL> select Location,Volume from Football_venue;
+
+LOCATION                           VOLUME
+------------------------------ ----------
+France                              42115
+Spain                               40005
+Argentina                           50000
+India                               55000
+Zimbombay                           45000
+Australia                           34000
+Hungary                             33000
+Serbia                              43000
+Italy                               47000
+Iraq                                47020
+
+10 rows selected.
+
+
+
+//DELETE A ROW:
+
+ delete from Football_venue where Location='Australia';
+
+1 row deleted.
