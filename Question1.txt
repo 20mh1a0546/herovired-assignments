@@ -49,7 +49,60 @@ SQL> insert into Employee_details values('E010','Geethika','Programme Analyst','
 
 1 row created.
 
+EMP_ID     EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEP_ID
+---------- ----------
+E001       Lalitha              Software Developer   M01        21-AUG-22
+     20000 D001
 
+E002       Prinyanka            Software Developer   M01        20-SEP-21
+     22000 D001
+
+E003       Ganga                Analyst              M02        20-MAR-20
+     30000 D002
+
+
+EMP_ID     EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEP_ID
+---------- ----------
+E004       Raj                  Analyst              M02        20-APR-20
+     30000 D002
+
+E005       Jyothi               Cloud Engineer       M03        20-APR-21
+     25000 D003
+
+E006       Deepthi              Devops Engineer      M03        20-APR-03
+     25000 D003
+
+
+EMP_ID     EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEP_ID
+---------- ----------
+E007       Vamsi                salesforce Engineer  M04        20-JUL-12
+     55000 D004
+
+E008       Surya                IT Manger            M05        21-JUL-13
+     50000 D005
+
+E009       Vijaya               Andriod Developer    M01        19-JUN-14
+     40000 D001
+
+
+EMP_ID     EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEP_ID
+---------- ----------
+E009       Amali                Andriod Developer    M01        19-JUN-18
+     30000 D001
+
+E010       Geethika             Programme Analyst    M07        19-JUN-19
+     35000 D008
+
+
+11 rows selected.
 
 //SALARIES OF ALL EMPLOYEE
 
