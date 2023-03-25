@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+h1{
+	font-family:'Times New Roman', Times, serif;
+	text-align: center;
+	
+}
+#main-div {
+	padding: 30px;
+	background-color: #dfd18e;
+	margin: 25px auto;
+	width: 70%;
+	border-radius:10px;;
+}
+form {
+	margin-top: 25px;
+}
+label {
+	display: block;
+	margin: 10px 0;
+}
+button {
+	margin-top: 20px;
+	color: white;
+	background-color: #277129;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor:pointer;
+}
+#rel{
+	display: none;
+}
+button:hover {
+	background-color: rgb(3, 45, 3);
+}
+#result {
+	margin-top: 25px;
+	font-size: 25px;
+}
+</style>
+</head>
+<body>
+    <h1>Quiz Application</h1>
+	<div id="main-div">
+		<div id="q"></div>
+		<form>
+			<label>
+				<input type="radio" name="ans" value="0">
+				<span></span>
+			</label>
+			<label>
+				<input type="radio" name="ans" value="1">
+				<span></span>
+			</label>
+			<label>
+				<input type="radio" name="ans" value="2">
+				<span></span>
+			</label>
+			<label>
+				<input type="radio" name="ans" value="3">
+				<span></span>
+			</label>
+		</form>
+		<p id="para"></p>
+		<button id="sub">Submit</button>
+		<div id="res"></div>
+		<button id="rel">Restart Quiz</button>
+	</div>
+	<script type="text/javascript">
+		// array of questions
+var ARR= [
+	{
+		q: "1)Which of the following keywords is used to define a variable in Javascript?",
+		op: ["var", "let", "Both A and B", "None of these"],
+		ans: 2
+	},
+	{
+		q: "2)Which of the following methods can be used to display data in some form using Javascript?",
+		op: ["document.write()", "console.log()", "window.alert()", "Allofthese"],
+		ans: 3
+	},
+	{
+		q: "3)How can a datatype be declared to be a constant type?",
+		op: ["const", "let", "var", "constant"],
+		ans: 0
+	},
+	{
+		q:"4)What keyword is used to check whether a given property is valid or not?",
+		op: ["isin", "in", "exist", "lies"],
+		ans: 1
+	},
+	{
+		q: "5)When an operator’s value is NULL, the typeof returned by the unary operator is:",
+		op: ["Boolean", "Object", "Undefined", "Integer"],
+		ans: 3
+	}];
+const q1 = document.getElementById("q");
+const op1 = document.querySelectorAll("span");
+const submit = document.getElementById("sub");
+const result = document.getElementById("res");
+const reload = document.getElementById("rel");
+let cq = 0;
+let s = 0;
+function check() {
+	let s_op = document.querySelector("input[name='ans']:checked");
+	if (!s_op) {
+		let p=document.getElementById("para");
+		p.innerHTML="please select an option";
+		p.style.color="red";
+		return;
+	}
+	else{
+		document.getElementById("para").innerHTML="";
+	}
+	let ans = s_op.value;
+	if (ans == ARR[cq].ans) {
+		s++;
+	}
+	s_op.checked = false;
+	cq++;
+	if (cq == ARR.length) {
+		display();
+	} else {
+		show();
+	}
+}
+function show() {
+	let quiz = ARR[cq];
+	q1.innerText = quiz.q;
+	op1.forEach((op1,index) => {
+		op1.innerText = quiz.op[index];
+	});
+}
+function display() {
+	result.innerText = `You scored ${s} out of ${ARR.length} questions`;
+	submit.style.display = "none";
+	reload.style.display = "block";
+}
+function restart() {
+	cq = 0;
+	s = 0;
+	result.innerText = "";
+	submit.style.display = "block";
+	reload.style.display = "none";
+	show();
+}
+submit.addEventListener("click", check);
+reload.addEventListener("click", restart);
+show();
+
+	</script>
+</body>
+</html>
